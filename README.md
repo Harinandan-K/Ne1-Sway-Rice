@@ -3,8 +3,8 @@
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Sway](https://img.shields.io/badge/Sway-111111?style=for-the-badge&logo=sway&logoColor=white)
 
-![Ne1 Chalk Desktop](images/desktop.png)
-![Fastfetch](images/fastfetch.png)
+![Ne1 Chalk Desktop](images/new-desktop.png)
+![Fastfetch](images/new-fastfetch.png)
 
 > Ne1 Chalk is a clean, fully automated, and keyboard-driven Wayland environment built on the Sway Window Manager. Designed specifically for Ubuntu and Debian systems, it features a monochromatic aesthetic, deep terminal integration, and a modular architecture managed entirely via GNU Stow.
 
@@ -24,7 +24,7 @@
 
 ## ⚙️ The Ne1 Control Center
 
-![Ne1 Control Center](images/Ctrl_Center.png)
+![Ne1 Control Center](images/new-Ctrl_Center.png)
 
 Built entirely from scratch using Rofi, the Control Center acts as the brain of the desktop. Triggered via **`Win + /`**, it provides instant access to system keybindings, architecture documentation, default application lists, and a built-in wallpaper picker.
 
@@ -32,7 +32,7 @@ Built entirely from scratch using Rofi, the Control Center acts as the brain of 
 
 ## ⏻ Session Management
 
-![Ne1 Power Menu](images/power_ctrl_center.png)
+![Ne1 Power Menu](images/new-power_ctrl_center.png)
 
 A sleek, heavily customized Rofi power menu handles system states (Triggered via **`Win + Shift + E`**). Additionally, the lock screen (`Win + Escape`) utilizes a custom script leveraging `grim`, `imagemagick`, and `swaylock` to instantly capture and smoothly blur your active workspace before locking.
 
