@@ -205,7 +205,7 @@ case "$CHOICE" in
   ;;
 "$OPT_WALL")
   # Launch Zenity file picker pointing to your specific hidden folder
-  SELECTED_WALL=$(zenity --file-selection --title="Select Wallpaper" --filename="$HOME/Pictures/.wallpapers/")
+  SELECTED_WALL=$(zenity --file-selection --title="Select Wallpaper" --filename="$HOME/.config/.wallpaper/")
 
   if [ -n "$SELECTED_WALL" ]; then
     swaymsg "output * bg \"$SELECTED_WALL\" fill"
