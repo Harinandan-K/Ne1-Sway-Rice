@@ -43,20 +43,20 @@ A sleek, heavily customized Rofi power menu handles system states (Triggered via
 This repository uses **GNU Stow** to manage symbolic links, keeping your actual configuration files safely version-controlled. 
 
 ### 1. System Requirements (Ubuntu / Debian)
-\`\`\`bash
+```bash
 sudo apt update
 sudo apt install sway waybar rofi kitty zsh stow imagemagick grim slurp
-\`\`\`
+```
 
 ### 2. Clone the Repository
-\`\`\`bash
+```bash
 git clone https://github.com/Harinandan-K/Ne1-Sway-Rice.git ~/dotfiles
 cd ~/dotfiles
-\`\`\`
+```
 
 ### 3. Deploy the Configurations
 *Ensure your target configuration folders (e.g., `~/.config/sway`) are empty or backed up before running this, otherwise Stow will fail to prevent overwriting your existing files.*
 
-\`\`\`bash
+```bash
 stow assets zsh btop fastfetch gtk kitty mako nvim nvtop rofi sway waybar wlogout wob xdg core scripts
-\`\`\`
+```
