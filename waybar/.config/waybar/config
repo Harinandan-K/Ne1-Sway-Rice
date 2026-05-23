@@ -1,0 +1,114 @@
+//                          ╭────────────────────────╮
+//                          │ 1                      │
+//                          │                        │
+//                          │   ███╗   ██╗           │
+//                          │   ████╗  ██║           │
+//                          │   ██╔██╗ ██║   █████╗  │
+//                          │   ██║╚██╗██║  ██╔══██╗ │
+//                          │   ██║ ╚████║  ███████║ │
+//                          │   ╚═╝  ╚═══╝  ██╔════╝ │
+//                          │               ╚██████╗ │
+//                          │                ╚═════╝ │
+//                          │                        │
+//                          │       Ne1 Chalk        │
+//                          │         v 2.0          │
+//                          ╰────────────────────────╯
+//
+//         ============================================================
+//                    Waybar Layout & Modules Configuration
+//         ============================================================
+//           This file defines the structure, active modules, and data 
+//            sources for the top status bar. It includes the logic for
+//             workspaces, hardware stats, clock, and system tray.
+//         ============================================================
+
+{
+    "layer": "top",
+    "position": "top",
+    "height": 16,
+    "margin-top": 0,
+    "margin-bottom": 2,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 4,
+    "exclusive": true,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["custom/notification", "clock", "custom/caffeine"],
+    "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "custom/power"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "1": [], "2": [], "3": [], "4": []
+        }
+    },
+
+    "clock": {
+        "format": "{:%d %b | %I:%M %p}",
+        "tooltip": false,
+        "on-click": "pkill yad || yad --calendar --title='CalendarPopup' --undecorated --fixed --no-buttons --background='#1e293b' --foreground='#cdd6f4'",
+        "on-click-right": "gnome-pomodoro"
+    },
+
+    "custom/notification": {
+        "exec": "~/.local/bin/notif_status.sh",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 8,
+        "tooltip": true,
+        "on-click": "~/.local/bin/notif_toggle.sh"
+    },
+
+    "custom/caffeine": {
+        "format": "{}",
+        "exec": "bash ~/.local/bin/caffeine_status.sh",
+        "return-type": "json",
+        "interval": 2,
+        "signal": 9,
+        "on-click": "bash ~/.local/bin/caffeine.sh"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}    {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": [""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "⚠",
+        "on-click": "nm-connection-editor"
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}    {capacity}% ",
+        "format-charging": "   {capacity}% ",
+        "format-plugged": "   {capacity}% ",
+        "format-icons": ["", "", "", "", ""],
+        "on-click": "~/.local/bin/battery_info.sh"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "bash ~/.local/bin/power_menu.sh"
+    }
+}

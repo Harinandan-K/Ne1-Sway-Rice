@@ -1,0 +1,45 @@
+#                           ╭────────────────────────╮
+#                           │ 1                      │
+#                           │                        │
+#                           │   ███╗   ██╗           │
+#                           │   ████╗  ██║           │
+#                           │   ██╔██╗ ██║   █████╗  │
+#                           │   ██║╚██╗██║  ██╔══██╗ │
+#                           │   ██║ ╚████║  ███████║ │
+#                           │   ╚═╝  ╚═══╝  ██╔════╝ │
+#                           │               ╚██████╗ │
+#                           │                ╚═════╝ │
+#                           │                        │
+#                           │       Ne1 Chalk        │
+#                           │         v 2.0          │
+#                           ╰────────────────────────╯
+#
+#          ============================================================
+#                        Wlogout Core Configuration
+#          ============================================================
+#               This config manages the baseline settings for the
+#              power menu, such as button spacing, background blur,
+#                      and keybindings for closing the menu.
+#          ============================================================
+
+* {
+    background-image: none;
+}
+
+window {
+    background-color: rgba(11, 23, 42, 0.9); /* Dark blue background */
+}
+
+button {
+    color: #cdd6f4;
+    background-color: #1e293b;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #89b4fa; /* Light blue on hover */
+    color: #0b172a;
+}

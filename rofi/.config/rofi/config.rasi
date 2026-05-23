@@ -1,0 +1,121 @@
+/*
+                            ╭────────────────────────╮
+                            │ 1                      │
+                            │                        │
+                            │   ███╗   ██╗           │
+                            │   ████╗  ██║           │
+                            │   ██╔██╗ ██║   █████╗  │
+                            │   ██║╚██╗██║  ██╔══██╗ │
+                            │   ██║ ╚████║  ███████║ │
+                            │   ╚═╝  ╚═══╝  ██╔════╝ │
+                            │               ╚██████╗ │
+                            │                ╚═════╝ │
+                            │                        │
+                            │       Ne1 Chalk        │
+                            │         v 2.0          │
+                            ╰────────────────────────╯
+
+           ============================================================
+                            Rofi Menu Configuration
+           ============================================================
+              This config defines the appearance and functionality of
+              the application launcher, including window dimensions,
+                 search behavior, and custom Orchis color themes.
+           ============================================================
+*/
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    font: "sans-serif 12";
+    drun-display-format: "{icon} {name}";
+    display-drun: "";
+}
+
+* {
+    /* Color Palette */
+    bg:             #1e1e2e;    /* Main window background */
+    bg-input:       #313244;    /* Search box background */
+    fg:             #cdd6f4;    /* Standard text */
+    fg-muted:       #a6adc8;    /* Placeholder text */
+    accent:         #89b4fa;    /* Blue border and highlight */
+    text-selected:  #11111b;    /* Dark text for selected item */
+
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+}
+
+window {
+    background-color: @bg;
+    border: 1px solid;
+    border-color: @accent;
+    border-radius: 12px;
+    width: 35%;
+    padding: 15px;
+}
+
+mainbox {
+    children: [inputbar, listview];
+}
+
+inputbar {
+    background-color: @bg-input;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin: 0 0 15px 0;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @fg-muted;
+    margin: 0 10px 0 0;
+}
+
+entry {
+    placeholder: "Search Apps...";
+    placeholder-color: @fg-muted;
+    text-color: @fg;
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+    scrollbar: false;
+    spacing: 4px;
+    border: 0px; 
+}
+
+element {
+    padding: 10px 15px;
+    border-radius: 8px;
+    spacing: 15px;
+    background-color: transparent;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color: @text-selected;
+}
+
+element-icon {
+    size: 24px;
+    background-color: transparent;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: @fg;
+    background-color: transparent;
+}
+
+element-text selected.normal {
+    text-color: @text-selected;
+}

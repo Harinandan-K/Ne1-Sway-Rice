@@ -1,0 +1,42 @@
+#                           ╭────────────────────────╮
+#                           │ 1                      │
+#                           │                        │
+#                           │   ███╗   ██╗           │
+#                           │   ████╗  ██║           │
+#                           │   ██╔██╗ ██║   █████╗  │
+#                           │   ██║╚██╗██║  ██╔══██╗ │
+#                           │   ██║ ╚████║  ███████║ │
+#                           │   ╚═╝  ╚═══╝  ██╔════╝ │
+#                           │               ╚██████╗ │
+#                           │                ╚═════╝ │
+#                           │                        │
+#                           │       Ne1 Chalk        │
+#                           │         v 2.0          │
+#                           ╰────────────────────────╯
+#
+#          ============================================================
+#                        Mako Notification Configuration
+#          ============================================================
+#               This file controls the styling, screen positioning, 
+#               and behavior of the system-wide pop-up notifications
+#                          for the Ne1 Chalk desktop.
+#          ============================================================
+
+# Positioning & Layout
+anchor=top-right
+layer=overlay
+width=300
+padding=10
+margin=10
+max-history=50
+
+# Ziap Theme Colors & Borders
+background-color=#1e293b
+text-color=#cdd6f4
+border-color=#89b4fa
+border-size=2
+border-radius=8
+
+# Do Not Disturb Mode overrides
+[mode=dnd]
+invisible=1

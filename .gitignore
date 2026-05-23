@@ -1,0 +1,12 @@
+# Ne1 Chalk Master Ignore File
+
+# Ignore local paths and states
+.config/gtk-3.0/bookmarks
+
+# Ignore Neovim states (handled by LazyVim)
+.config/nvim/lazy-lock.json
+
+# Ignore generic caches
+*.bak
+*.log
+.DS_Store

@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# Ensure Bluetooth is on
+bluetoothctl power on
+
+# Function to show all available/nearby devices
+show_all_devices() {
+  notify-send "Bluetooth" "Scanning for all available devices..." -t 2000
+  # Scan for 5 seconds to get a solid list
+  bluetoothctl --timeout 5 scan on >/dev/null 2>&1
+
+  # Get all discovered devices (MAC and Name)
+  available_list=$(bluetoothctl devices | cut -d ' ' -f 3-)
+
+  if [[ -z "$available_list" ]]; then
+    notify-send "Bluetooth" "No devices found."
+    exit 1
+  fi
+
+  # Show list of names
+  chosen_device=$(echo -e "$available_list" | rofi -dmenu -i -p "Available Devices" -config ~/.config/rofi/config.rasi)
+
+  if [[ -n "$chosen_device" ]]; then
+    # Get MAC address for the chosen name
+    mac=$(bluetoothctl devices | grep "$chosen_device" | awk '{print $2}')
+
+    notify-send "Bluetooth" "Connecting to $chosen_device..."
+    bluetoothctl pair "$mac" >>/dev/null 2>&1
+    bluetoothctl trust "$mac" >>/dev/null 2>&1
+    bluetoothctl connect "$mac"
+    notify-send "Bluetooth" "Connected to $chosen_device"
+  fi
+}
+
+# --- Main Menu ---
+# Get list of Paired devices for the quick view
+paired=$(bluetoothctl devices | awk '{$1=""; print "✓ "$0}' | sed 's/^[ \t]*//')
+
+options="Devices\nScan Again\nToggle Power\n$paired"
+
+chosen=$(echo -e "$options" | rofi -dmenu -i -p "Bluetooth" -config ~/.config/rofi/config.rasi)
+
+case "$chosen" in
+"Devices")
+  show_all_devices
+  ;;
+"Scan Again")
+  exec $0
+  ;;
+"Toggle Power")
+  status=$(bluetoothctl show | grep "Powered" | awk '{print $2}')
+  if [ "$status" == "yes" ]; then bluetoothctl power off; else bluetoothctl power on; fi
+  ;;
+*)
+  if [[ -n "$chosen" ]]; then
+    clean_name=$(echo "$chosen" | sed 's/^[✓ ]*//')
+    mac=$(bluetoothctl devices | grep "$clean_name" | awk '{print $2}')
+    bluetoothctl connect "$mac"
+    notify-send "Bluetooth" "Connected to $clean_name"
+  fi
+  ;;
+esac

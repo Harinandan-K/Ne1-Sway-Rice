@@ -1,0 +1,61 @@
+//                          ╭────────────────────────╮
+//                          │ 1                      │
+//                          │                        │
+//                          │   ███╗   ██╗           │
+//                          │   ████╗  ██║           │
+//                          │   ██╔██╗ ██║   █████╗  │
+//                          │   ██║╚██╗██║  ██╔══██╗ │
+//                          │   ██║ ╚████║  ███████║ │
+//                          │   ╚═╝  ╚═══╝  ██╔════╝ │
+//                          │               ╚██████╗ │
+//                          │                ╚═════╝ │
+//                          │                        │
+//                          │       Ne1 Chalk        │
+//                          │         v 2.0          │
+//                          ╰────────────────────────╯
+//
+//         ============================================================
+//                     Fastfetch System Info Configuration
+//         ============================================================
+//             This file formats the terminal system fetch. It points 
+//            to the custom Ne1 Chalk ASCII logo and organizes the 
+//             hardware and software stats into a clean layout.
+//         ============================================================
+
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/ne1_logo.txt",
+    "color": {
+      "1": "blue"
+    },
+    "padding": {
+      "top": 1,
+      "left": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "separator": " 󰁔 ",
+    "color": {
+      "keys": "blue"
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "uptime",
+    "packages",
+    "wm",
+    "terminal",
+    "separator",
+    "cpu",
+    "gpu",
+    "memory",
+    "break",
+    "colors"
+  ]
+}

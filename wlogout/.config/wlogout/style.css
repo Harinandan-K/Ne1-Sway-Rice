@@ -1,0 +1,62 @@
+/*
+                            ╭────────────────────────╮
+                            │ 1                      │
+                            │                        │
+                            │   ███╗   ██╗           │
+                            │   ████╗  ██║           │
+                            │   ██╔██╗ ██║   █████╗  │
+                            │   ██║╚██╗██║  ██╔══██╗ │
+                            │   ██║ ╚████║  ███████║ │
+                            │   ╚═╝  ╚═══╝  ██╔════╝ │
+                            │               ╚██████╗ │
+                            │                ╚═════╝ │
+                            │                        │
+                            │       Ne1 Chalk        │
+                            │         v 2.0          │
+                            ╰────────────────────────╯
+
+           ============================================================
+                             Wlogout Styling (CSS)
+           ============================================================
+              This stylesheet defines the aesthetics of the overlay
+              power menu, including hover animations, button radii,
+                and background transparency for a cohesive look.
+           ============================================================
+*/
+
+* {
+    font-family: "sans-serif";
+    background-image: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+window {
+    background-color: rgba(11, 23, 42, 0.95);
+}
+
+button {
+    color: #cdd6f4;
+    background-color: #1e1e2e;
+    border: 2px solid #89b4fa;
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+button:focus, button:active, button:hover {
+    background-color: #89b4fa;
+    color: #11111b;
+    outline-style: none;
+    border: 2px solid #11111b;
+}
+
+/* Icon Integrations */
+#lock { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#suspend { background-image: image(url("/usr/share/wlogout/icons/suspend.png")); }
+#hibernate { background-image: image(url("/usr/share/wlogout/icons/hibernate.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
+#reboot { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }

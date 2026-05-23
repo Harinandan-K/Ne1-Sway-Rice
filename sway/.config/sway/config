@@ -1,0 +1,54 @@
+#                           ╭────────────────────────╮
+#                           │ 1                      │
+#                           │                        │
+#                           │   ███╗   ██╗           │
+#                           │   ████╗  ██║           │
+#                           │   ██╔██╗ ██║   █████╗  │
+#                           │   ██║╚██╗██║  ██╔══██╗ │
+#                           │   ██║ ╚████║  ███████║ │
+#                           │   ╚═╝  ╚═══╝  ██╔════╝ │
+#                           │               ╚██████╗ │
+#                           │                ╚═════╝ │
+#                           │                        │
+#                           │       Ne1 Chalk        │
+#                           │         v 2.0          │
+#                           ╰────────────────────────╯
+#
+#          ============================================================
+#                       Sway Window Manager Configuration
+#          ============================================================
+#              This file controls the core window manager behavior,
+#             keybindings, input devices, and autostart applications
+#                        for the Ne1 Chalk environment.
+#          ============================================================
+
+### Variables
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term kitty
+set $menu rofi -show drun
+
+### Includes
+include ~/.config/sway/hardware.conf
+include ~/.config/sway/theme.conf
+include ~/.config/sway/autostart.conf
+include ~/.config/sway/keybindings.conf
+include ~/.config/sway/wallpaper.conf
+
+# Default system includes
+include /etc/sway/config-vars.d/*
+include /etc/sway/config.d/*
+
+# --- Ne1 Control Centre Pop-up Rules ---
+for_window [app_id="ne1_cc"] floating enable, resize set 75 ppt 75 ppt, move position center, border pixel 3, corner_radius 12
+for_window [app_id="ne1_cc"] client.floating #89b4fa #1e293b #cdd6f4 #89b4fa #89b4fa
+for_window [title="Select Wallpaper"] floating enable, resize set 800 600, move position center, border pixel 2
+
+
+# Fallback in case Kitty is using XWayland
+for_window [class="ne1_cc"] floating enable, resize set 75 ppt 75 ppt, move position center, border pixel 3, corner_radius 12
+for_window [class="ne1_cc"] client.floating #89b4fa #1e293b #cdd6f4 #89b4fa #89b4fa
+for_window [title="CalendarPopup"] floating enable, border pixel 2

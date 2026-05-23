@@ -1,0 +1,44 @@
+/*
+                            ╭────────────────────────╮
+                            │ 1                      │
+                            │                        │
+                            │   ███╗   ██╗           │
+                            │   ████╗  ██║           │
+                            │   ██╔██╗ ██║   █████╗  │
+                            │   ██║╚██╗██║  ██╔══██╗ │
+                            │   ██║ ╚████║  ███████║ │
+                            │   ╚═╝  ╚═══╝  ██╔════╝ │
+                            │               ╚██████╗ │
+                            │                ╚═════╝ │
+                            │                        │
+                            │       Ne1 Chalk        │
+                            │         v 2.0          │
+                            ╰────────────────────────╯
+
+           ============================================================
+                         Wlogout Power Menu Structure
+           ============================================================
+              This file maps the power menu buttons (shutdown, reboot,
+               suspend, logout) to their specific system commands
+                        and assigns their respective icons.
+           ============================================================
+*/
+
+{
+    "label": "shutdown",
+    "action": "systemctl poweroff",
+    "text": "Shutdown",
+    "keybind": "s"
+}
+{
+    "label": "reboot",
+    "action": "systemctl reboot",
+    "text": "Restart",
+    "keybind": "r"
+}
+{
+    "label": "logout",
+    "action": "swaymsg exit",
+    "text": "Logout",
+    "keybind": "e"
+}
