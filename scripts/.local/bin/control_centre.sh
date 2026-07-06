@@ -35,6 +35,7 @@ Win + Q                  : Kill Focused Window
 Win + Shift + C          : Reload Sway Config
 Win + Escape             : Lock Screen (Swaylock)
 Win + Shift + Escape     : Direct System Shutdown
+Ctrl + Alt + Del         : Direct Logout
 Win + /                  : Show Ne1 Control Centre
 Win + Shift + E          : Power Control Center
 
